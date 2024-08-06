@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#FF7043</color>
+    <color name="colorAccent">#FF7043</color>
+    <color name="grey_et_color">#D9D9D9</color>
+    <color name="grey_text">#787878</color>
+    <color name="border_black_10">#1A000000</color>
+    <color name="grey_main_bg">#4DD9D9D9</color>
+    <color name="grey_flag_bg">#0D000000</color>
+    <color name="btn_text_clr_holo">#484848</color>
+
+    <color name="btn_stroke_green_success">#5CD668</color>
+</resources>

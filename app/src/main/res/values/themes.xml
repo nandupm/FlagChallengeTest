@@ -1,0 +1,47 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.FlagsChallenge" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textViewStyle">@style/Theme.FlagsChallenge.TextViewTheme</item>
+        <item name="android:buttonStyle">@style/Theme.FlagsChallenge.ButtonTheme</item>
+
+    </style>
+
+    <style name="Theme.FlagsChallenge" parent="Base.Theme.FlagsChallenge" />
+
+    <style name="Theme.FlagsChallenge.TextViewTheme" parent="android:Widget.TextView">
+        <item name="fontFamily">@font/inter_medium</item>
+    </style>
+
+    <style name="Theme.FlagsChallenge.ButtonTheme" parent="android:Widget.Button">
+        <item name="fontFamily">@font/inter_medium</item>
+    </style>
+
+    <style name="Theme.FlagsChallenge.PrimaryButtonTheme" parent="android:Widget.Button">
+        <item name="background">@drawable/bg_btn_primary</item>
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textAllCaps">true</item>
+
+    </style>
+
+    <style name="Theme.FlagsChallenge.TextViewTheme.ResultTextButton" parent="Theme.FlagsChallenge.TextViewTheme">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:visibility">invisible</item>
+    </style>
+
+    <style name="Theme.FlagsChallenge.TextViewTheme.OptionButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">@color/btn_text_clr_holo</item>
+        <item name="android:textSize">12sp</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="strokeColor">@color/btn_text_clr_holo</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:scrollHorizontally">true</item>
+    </style>
+</resources>
