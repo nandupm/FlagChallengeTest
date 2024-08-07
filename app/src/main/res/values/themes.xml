@@ -40,6 +40,8 @@
         <item name="android:ellipsize">marquee</item>
         <item name="strokeColor">@color/btn_text_clr_holo</item>
         <item name="strokeWidth">2dp</item>
+        <item name="android:focusable">true</item>
+        <item name="android:backgroundTint">@android:color/transparent</item>
         <item name="android:singleLine">true</item>
         <item name="android:marqueeRepeatLimit">marquee_forever</item>
         <item name="android:scrollHorizontally">true</item>

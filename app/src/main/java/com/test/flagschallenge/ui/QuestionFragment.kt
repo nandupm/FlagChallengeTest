@@ -2,8 +2,6 @@ package com.test.flagschallenge.ui
 
 import android.content.res.ColorStateList
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -30,6 +28,19 @@ class QuestionFragment : BaseFragment() {
         getViewModel().timerVisible.value = true
         setQuestionToUI()
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        requestFocusButton()
+    }
+
+
+    private fun requestFocusButton(){
+        binding.button.requestFocus()
+        binding.button2.requestFocus()
+        binding.button3.requestFocus()
+        binding.button3.requestFocus()
     }
 
     private fun setQuestionToUI(){
@@ -74,6 +85,10 @@ class QuestionFragment : BaseFragment() {
         binding.button2.setBackgroundColor(colorBg)
         binding.button3.setBackgroundColor(colorBg)
         binding.button4.setBackgroundColor(colorBg)
+        binding.button.setTextColor(color)
+        binding.button2.setTextColor(color)
+        binding.button3.setTextColor(color)
+        binding.button4.setTextColor(color)
         binding.tvResult1.visibility = View.INVISIBLE
         binding.tvResult2.visibility = View.INVISIBLE
         binding.tvResult3.visibility = View.INVISIBLE
@@ -82,6 +97,7 @@ class QuestionFragment : BaseFragment() {
 
     private fun setButtonSuccess(button:MaterialButton,textView: TextView){
         button.strokeColor = ColorStateList.valueOf(ContextCompat.getColor(requireContext(), R.color.btn_stroke_green_success))
+        button.setTextColor(ContextCompat.getColor(requireContext(), R.color.btn_text_clr_holo))
         textView.visibility = View.VISIBLE
         textView.text = requireContext().resources.getText(R.string.correct)
         textView.setTextColor(ContextCompat.getColor(requireContext(),R.color.btn_stroke_green_success))
@@ -90,6 +106,7 @@ class QuestionFragment : BaseFragment() {
     private fun setButtonError(button:MaterialButton,textView: TextView){
         button.strokeColor = ColorStateList.valueOf(ContextCompat.getColor(requireContext(), R.color.colorAccent))
         button.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.colorAccent))
+        button.setTextColor(ContextCompat.getColor(requireContext(), android.R.color.white))
         textView.visibility = View.VISIBLE
         textView.text = requireContext().resources.getText(R.string.wrong)
         textView.setTextColor(ContextCompat.getColor(requireContext(),R.color.colorAccent))
@@ -107,12 +124,6 @@ class QuestionFragment : BaseFragment() {
             setButtonError(btnClicked.first,btnClicked.second)
             val btnSuccess = getButtonForOption(getCorrectOption(question))
             setButtonSuccess(btnSuccess.first,btnSuccess.second)
-            /*Looper.myLooper()?.let {
-                Handler(it).postDelayed(
-                    {goToNextQuestion(question.questionNumber)},
-                    2000
-                )
-            }*/
         }
         answered(question.questionNumber)
     }
@@ -168,12 +179,6 @@ class QuestionFragment : BaseFragment() {
 
     private fun answeredCorrectly(questionNumber: Int){
         getViewModel().rightAnswers += 1
-        /*Looper.myLooper()?.let {
-            Handler(it).postDelayed(
-                {goToNextQuestion(questionNumber)},
-                2000
-            )
-        }*/
     }
 
     private fun setButtonsClickable(isClickable:Boolean){

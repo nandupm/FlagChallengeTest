@@ -48,7 +48,7 @@ class TimerFragment : BaseFragment(){
             getViewModel().currentPage.value = QuestionFragment()
         }else{
             binding.tv2.text = requireContext().resources.getString(R.string.will_start_at)
-            binding.tvTimer.text = "${cal.get(Calendar.HOUR_OF_DAY)}:${cal.get(Calendar.MINUTE)}:${cal.get(Calendar.SECOND)}"
+            binding.tvTimer.text = "${cal.get(Calendar.HOUR_OF_DAY).toTwoDigitString()}:${cal.get(Calendar.MINUTE).toTwoDigitString()}:${cal.get(Calendar.SECOND).toTwoDigitString()}"
             handler = Looper.myLooper()?.let { Handler(it) }
             handler?.postDelayed(handlerCallback,timeDiff - MAX_TIMER_VALUE)
         }
